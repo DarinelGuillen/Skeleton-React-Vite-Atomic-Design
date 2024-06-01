@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Establece variables y estilos base en :root para un control universal */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,7 +10,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,65 +18,46 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Importación y configuración de la fuente personalizada */
+@font-face {
+    font-family: 'Gaoel';
+    src: url('../fonts/gaoel.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
+  background: #040404;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  min-width: 100vw;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 #root {
+  width: 100%; /* Asegura que el ancho sea 100% del viewport */
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+/* Estilos para la barra de scroll */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
 
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Color de fondo del track de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 20px; /* Bordes redondeados para el pulgar */
+  border: 3px solid #1e1e1e; /* Bordes del pulgar que coinciden con el track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888; /* Color del pulgar al pasar el ratón por encima */
+}
